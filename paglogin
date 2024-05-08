@@ -1,0 +1,19 @@
+@extends('layouts.app')
+
+@section('conteudo')
+<p id="login">Login</p>
+    <form>
+        <p id="email">
+            <label for="email">Digite seu Email</label>
+             <input type="email" id="email" size="30"  />
+        </p>
+        <p>
+            <label for="senha"> Digite sua Senha</label>
+            <input type="password" id="senha">
+        </p>
+        <p>
+            <button id="btnlogar">LOGAR</button>
+        </p>
+    </form>
+    <button id="btncadastro">  <a href="/pagCadastro">Crie uma Conta</a> </button>
+@endsection
