@@ -1,0 +1,189 @@
+/* The switch - the box around the slider */
+#theme-toggle-button {
+    font-size: 10px;
+    position: relative;
+    display: inline-block;
+    width: 7em;
+    cursor: pointer;
+  }
+  
+  /* Hide default HTML checkbox */
+  #toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  #container,
+  #patches,
+  #stars,
+  #button,
+  #sun,
+  #moon,
+  #cloud {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.25s;
+  }
+  
+  /* night sky background */
+  #toggle:checked + svg #container {
+    fill: #2b4360;
+  }
+  
+  /* move button to right when checked */
+  #toggle:checked + svg #button {
+    transform: translate(28px, 2.333px);
+  }
+  
+  /* show/hide sun and moon based on checkbox state */
+  #sun {
+    opacity: 1;
+  }
+  
+  #toggle:checked + svg #sun {
+    opacity: 0;
+  }
+  
+  #moon {
+    opacity: 0;
+  }
+  
+  #toggle:checked + svg #moon {
+    opacity: 1;
+  }
+  
+  /* show or hide background items on checkbox state */
+  #cloud {
+    opacity: 1;
+  }
+  
+  #toggle:checked + svg #cloud {
+    opacity: 0;
+  }
+  
+  #stars {
+    opacity: 0;
+  }
+  
+  #toggle:checked + svg #stars {
+    opacity: 1;
+  }
+  
+
+  /* Estilo para o tema escuro */
+body.dark-theme {
+  background-color: rgb(45, 45, 150); /* Cor de fundo mais escura */
+}
+
+#div1.dark-theme {
+  background-color: rgb(0, 0, 0); /* Fundo ainda mais escuro */
+  opacity: 90%; /* Maior opacidade */
+}
+
+#titulo.dark-theme,
+h1.dark-theme,
+h3.dark-theme,
+h2.dark-theme {
+  color: #b0b0b0; /* Cor de texto mais clara */
+}
+
+#botao.dark-theme,
+#btnnn.dark-theme {
+  background-color: rgb(30, 30, 90); /* Fundo do botão mais escuro */
+}
+
+/* Outros estilos mantidos para exemplo */
+#div1 {
+  margin-left: 33%;
+  background-color: black;
+  opacity: 80%;
+  border-radius: 20px;
+  width: 37%;
+  height: 120vh;
+}
+
+#titulo {
+  font-size: 60px;
+  margin-left: 30%;
+}
+
+h1, h3 {
+  color: white;
+  font-family: "Teachers", sans-serif;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h2 {
+  color: white;
+  font-size: 20px;
+  font-family: "Teachers", sans-serif;
+}
+
+#nm, #numcpf, #user, #enderecoemail, #senha1, #csenha2 {
+  margin-top: 10%;
+  margin-left: 8%;
+}
+
+#nome, #cpf, #usuario, #email, #senha, #senha2 {
+  position: absolute;
+  margin-left: 3%;
+  border-radius: 10px;
+  width: 36vh;
+}
+
+#divb {
+  margin-top: 15%;
+  margin-left: 3%;
+}
+
+#botao {
+  width: 30vh;
+  height: 5vh;
+  margin-left: 6%;
+  border-radius: 40px;
+  font-family: "Teachers", sans-serif;
+  font-size: 2vh;
+  color: white;
+  background-color: rgb(51, 51, 119);
+}
+
+#btnnn {
+  width: 30vh;
+  height: 5vh;
+  border-radius: 40px;
+  font-family: "Teachers", sans-serif;
+  font-size: 2vh;
+  color: white;
+  background-color: rgb(51, 51, 119);
+}
+
+#divphp {
+  margin-top: -7px;
+  margin-left: 20px;
+}
+
+#central {
+  background-color: black;
+  opacity: 80%;
+  width: 40%;
+  height: 350px;
+  margin-left: 30%;
+  margin-top: 10%;
+  text-align: center;
+}
+
+#ola {
+  margin-bottom: -10%;
+  margin-left: 10%;
+  position: absolute;
+}
+
+#divlc {
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 4%;
+}
