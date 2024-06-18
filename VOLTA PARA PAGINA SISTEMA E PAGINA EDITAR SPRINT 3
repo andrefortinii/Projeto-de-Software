@@ -1,0 +1,95 @@
+<?php
+if(!empty($_GET['id'])){
+    include_once('config.php');
+
+    $id = $_GET['id'];
+
+    $sqlSelect = "SELECT * FROM usuarios WHERE id=$id";
+    $result = $conexao->query($sqlSelect);
+
+    if($result->num_rows > 0)
+    {
+        while($user_data = mysqli_fetch_assoc($result))
+        {
+            $nome = $user_data['nome'];
+            $cpf = $user_data['cpf'];
+            $usuario = $user_data['username'];
+            $email = $user_data['email'];
+            $senha = $user_data['senha'];
+        }
+    }
+    else{
+        header('Location: sistema.php');
+    }
+
+}
+else{
+    header('Location: sistema.php');
+
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="btn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Quicksand:wght@300..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <title>Formulario Login</title>
+</head>
+<body>
+<label id="theme-toggle-button">
+    <input type="checkbox" id="toggle">
+    <!-- SVG code here -->
+</label>
+<h1><a href="sistema.php">Voltar</a></h1>
+<div id="div1">
+    <form action="saveEdit.php" method="POST">
+        <h1 id="titulo">Cadastro</h1>
+        <h1 id="nm">Nome Completo</h1>
+        <input type="text" name="nome" id="nome" value="<?php echo isset($nome) ? $nome : ''; ?>" class="inputt">
+
+        <h1 id="numcpf">Número do CPF</h1>
+        <input type="number" name="cpf" value="<?php echo isset($cpf) ? $cpf : ''; ?>" id="cpf" class="inputt">
+
+        <h1 id="user">Nome de Usuário</h1>
+        <input type="text" name="usuario" id="usuario" value="<?php echo isset($usuario) ? $usuario : ''; ?>" class="inputt">
+
+        <h1 id="enderecoemail">Email</h1>
+        <input type="email" name="email" value="<?php echo isset($email) ? $email : ''; ?>" id="email" class="inputt">
+
+        <h1 id="senha1">Senha</h1>
+        <input type="password" name="senha" id="senha" value="<?php echo isset($senha) ? $senha : ''; ?>" class="inputt">
+
+        <input type="hidden" name="id" value="<?php echo $id ?>">
+
+        <div id="divb">    
+            <button type="submit" id="update" name="update">Salvar alterações</button>
+        </div>
+
+        <div id="divphp"></div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('toggle').addEventListener('change', function () {
+        if (this.checked) {
+            document.body.classList.add('dark-theme');
+            document.querySelectorAll('#div1, #titulo, h1, h3, h2, #botao, #btnnn').forEach(function (element) {
+                element.classList.add('dark-theme');
+            });
+        } else {
+            document.body.classList.remove('dark-theme');
+            document.querySelectorAll('#div1, #titulo, h1, h3, h2, #botao, #btnnn').forEach(function (element) {
+                element.classList.remove('dark-theme');
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
