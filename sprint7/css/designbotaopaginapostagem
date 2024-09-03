@@ -1,24 +1,20 @@
-/* Estilos para o botão "Criar Postagem" */
 .create-post-div {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    color: #fff;
-    background-color: #007bff; /* Cor de fundo azul */
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.2s;
-}
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+            width: 200px;
+            padding: 10px;
+            transition: 0.3s;
+        }
 
-.create-post-div:hover {
-    background-color: #0056b3; /* Cor de fundo azul escuro ao passar o mouse */
-    transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
-}
-
-.create-post-div:active {
-    background-color: #004080; /* Cor de fundo azul ainda mais escuro ao clicar */
-    transform: scale(0.98); /* Leve redução de tamanho ao clicar */
-}
+        .create-post-div:hover {
+            background-color: violet;
+            color: white;
+        }
